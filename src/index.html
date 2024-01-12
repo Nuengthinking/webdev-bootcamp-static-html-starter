@@ -142,15 +142,20 @@
             alt="slide image 4" 
             class="w-full h-full object-cover my-slides"
             />
-
-            <a class="text-white absolute top-[45%] right-3 cursor-pointer">
-              <i class="fa-solid fa-chevron-right fa-2xl"></i>
-            </a>
-
-            <a class="text-white absolute top-[45%] left-3 cursor-pointer">
-              <i class="fa-solid fa-chevron-left fa-2xl"></i>
-            </a>
           </div>
+
+          <a 
+            class="text-white absolute top-[45%] right-3 cursor-pointer"
+            onclick="increaseSlideNumber(-1)">
+            <i class="fa-solid fa-chevron-right fa-2xl"></i>
+          </a>
+
+          <a 
+            class="text-white absolute left-3 top-[45%] cursor-pointer"
+            onclick="increaseSlideNumber(-1)">
+            <i class="fa-solid fa-chevron-left fa-2xl"></i>
+          </a>
+
         </div>
         
         <div class="flex justify-center items-center w-full gap-3 mt-6">
@@ -225,8 +230,10 @@
           slideNumber = 0;
         } else if (n < 0) {
           slideNumber = imageSlides.length - 1;
+        } else {
+          slideNumber = n;
         }
-
+  
         for (let i = 0; i < imageSlides.length; i++) {
           imageSlides[i].style.display = "none";
 
